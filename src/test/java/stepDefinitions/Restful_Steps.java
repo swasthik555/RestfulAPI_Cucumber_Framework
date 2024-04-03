@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,7 +35,7 @@ public class Restful_Steps {
 	}
 
 	@Then("I receive the response code as {int}")
-	public void i_receive_the_response_code_as(int int1) {
+	public void i_receive_the_response_code_as(int int1) throws IOException {
 		statusCode = response.getStatusCode();
 		assertEquals(statusCode, 200);
 	}
